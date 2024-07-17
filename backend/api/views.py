@@ -14,10 +14,12 @@ class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 
+    # Get all notes created by authenticated user
     def get_queryset(self):
         user = self.request.user
         return Note.objects.filter(author=user)
     
+    #If fields are valid, assign self user to author field.
     def perform_create(self, serializer):
         if serializer.is_valid():
             serializer.save(author=self.request.user)
