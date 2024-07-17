@@ -12,6 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # if user fields are valid, the user object will be return
     def create(self, validated_data):
+        print(validated_data)
         user = User.objects.create_user(**validated_data)
         return user
     
