@@ -1,0 +1,3 @@
+[submodule "DjangoBackend"]
+	path = DjangoBackend
+	url = https://github.com/Appletri/DjangoBackend.git
